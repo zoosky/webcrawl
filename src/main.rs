@@ -142,7 +142,7 @@ fn main() -> Result<()> {
         let registry = registry.clone();
 
         move |req: Request<Body>|
-        -> Box<Future<Item=Response<Body>, Error=hyper::Error> + Send> {
+        -> Box<dyn Future<Item=Response<Body>, Error=hyper::Error> + Send> {
             let path = req.uri().path();
             let method = req.method();
 
