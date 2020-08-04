@@ -3,12 +3,13 @@ use crate::ty::{AsStr, FetchBuffer};
 use futures::{Future, Stream};
 use log::*;
 use reqwest::r#async::{Chunk, Client};
-use std::str::from_utf8;
+use std::str::from_utf8_unchecked;
 use url::Url;
 
 impl AsStr for Chunk {
     fn as_str(&self) -> &str {
-        from_utf8(self.as_ref()).unwrap()
+        //TODO #1 fix unsafe
+        unsafe { from_utf8_unchecked(self.as_ref()) }
     }
 }
 

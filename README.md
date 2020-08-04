@@ -31,13 +31,13 @@ curl -i -XGET http://localhost:3000/api/domains
 ## List URLs for a domain
 
 ```sh
-curl -i -XGET http://localhost:3000/api/results?id=http://some.host.example.com
+curl -i -XGET http://localhost:3000/api/results?id\=http://some.host.example.com
 ```
 
 ## List URLs count for a domain
 
 ```sh
-curl -i -XGET http://localhost:3000/api/results/count?id=http://some.host.example.com
+curl -i -XGET http://localhost:3000/api/results/count?id\=http://some.host.example.com
 ```
 
 
